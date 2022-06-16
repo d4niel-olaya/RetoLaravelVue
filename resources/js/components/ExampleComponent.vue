@@ -5,8 +5,8 @@
                 <div class="card">
                     <div class="card-header">Acciones para realizar</div>
                     <div class="card-body">
-                        <a href="/employees">Crear empleados</a>
-                        <a href="/show">Ver listado de empleados</a>
+                        <a href="/employees">Empleados</a>
+                        <a href="/show">Contratos</a>
                         
                     </div>
                 </div>

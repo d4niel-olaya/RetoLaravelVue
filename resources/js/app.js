@@ -20,7 +20,9 @@ window.Vue = require('vue').default;
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+Vue.component('form-component', require('./components/FormComponent.vue').default);
+Vue.component('emp-component', require('./components/EmpComponent.vue').default);
+Vue.component('create-employee', require('./components/indexEmployees.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -29,4 +31,16 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+});
+
+const formulario = new Vue({
+    el:'#form-create',
+});
+
+const emp = new Vue({
+    el:'#show',
+});
+
+const empC = new Vue({
+    el:'#cEmp',
 });

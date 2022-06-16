@@ -19,7 +19,11 @@ Route::get('/', function () {
 
 Route::get('/show', [ControllerEmployees::class, 'index']);
 Route::get('/employees', function(){
-    return view('createEmployee');
+    return view('indexEmployees');
 });
 
 Route::post('/createEmployee', [ControllerEmployees::class, 'insertar'])->name('Create');
+
+Route::get('/createEmployees', function(){
+    return view('createEmployee');
+});

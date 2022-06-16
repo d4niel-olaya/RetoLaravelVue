@@ -17,7 +17,8 @@ class ContractSeeder extends Seeder
         $contractList = ['ops', 'Termino fijo', 'Termino indefinido', 'Aprendizaje'];
         foreach($contractList as $contract){
             $c = new Contract();
-            $c -> type = $contract;
+            $c -> tipo = $contract;
+            $c -> estado = true;
             $c -> save();
         }
     }

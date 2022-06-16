@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('contractId');
+            $table ->boolean('estado');
             $table->string('nombre');
+            $table->string('cedula')->unique();
             $table->string('apellido');
             $table->enum('sexo', ['Masculino', 'Femenino']);
             $table->timestamps();

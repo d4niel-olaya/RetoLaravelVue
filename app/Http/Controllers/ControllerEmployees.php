@@ -15,11 +15,14 @@ class ControllerEmployees extends Controller
         $emp = new Employee();
         $nombre = $request -> nombre;
         $apellido =$request -> apellido;
+        $cedula = $request -> cedula;
         $tipo = $request -> tipoc;
         $sexo = $request-> sexo;
         $emp -> nombre = $nombre;
+        $emp -> estado = true;
         $emp -> contractId = $tipo;
         $emp -> apellido = $apellido;
+        $emp -> cedula = $cedula;
         $emp -> sexo = $sexo;
         $emp -> save();
         if($emp -> save()){
