@@ -23,6 +23,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('form-component', require('./components/FormComponent.vue').default);
 Vue.component('emp-component', require('./components/EmpComponent.vue').default);
 Vue.component('create-employee', require('./components/indexEmployees.vue').default);
+Vue.component('contract-op', require('./components/indexContract.vue').default);
+Vue.component('contract-list', require('./components/ContractComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -33,14 +35,22 @@ const app = new Vue({
     el: '#app',
 });
 
-const formulario = new Vue({
+const formCreateEmployee = new Vue({
     el:'#form-create',
 });
 
-const emp = new Vue({
-    el:'#show',
+const employeeList= new Vue({
+    el:'#showEmployees',
 });
 
-const empC = new Vue({
-    el:'#cEmp',
+const createEmployee = new Vue({
+    el:'#createEmployee',
 });
+
+const ContractIndex = new Vue({
+    el:'#ContractIndex',
+});
+
+const ContractList = new Vue({
+    el:'#ContractList',
+})

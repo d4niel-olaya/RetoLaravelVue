@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="createEmployee">
-        <create-employee></create-employee>
+    <div id="ContractList">
+        <contract-list  :props="{{json_encode($contracts)}}"></contract-list>
     </div>
     <script src="{{mix('js/app.js')}}"></script>
 </body>

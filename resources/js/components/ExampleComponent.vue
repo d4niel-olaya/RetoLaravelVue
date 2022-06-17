@@ -1,13 +1,14 @@
 <template>
-    <div class="container">
+    <div class="container ms-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Acciones para realizar</div>
-                    <div class="card-body">
-                        <a href="/employees">Empleados</a>
-                        <a href="/show">Contratos</a>
-                        
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h5 class="card-title">Módulo recursos humanos</h5>
+                        <div class="card-body">
+                            <a href="/employees" class="btn btn-outline-primary">Empleados</a>
+                            <a href="/contracts" class="btn btn-outline-success">Contratos</a>   
+                        </div>
                     </div>
                 </div>
             </div>

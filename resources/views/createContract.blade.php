@@ -9,9 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="createEmployee">
-        <create-employee></create-employee>
-    </div>
     <script src="{{mix('js/app.js')}}"></script>
 </body>
 </html>

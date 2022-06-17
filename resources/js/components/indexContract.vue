@@ -3,12 +3,12 @@
         <div class="card text-center">
             <div class="card-body">
                 <div class="card-title">
-                    CRUD EMPLEADOS
+                    CRUD Contratos
                 </div>
                 <div class="card-body">
-                    <a href="/createEmployees" class="btn btn-outline-primary">Crear empleado</a>
+                    <a href="" class="btn btn-outline-primary">Crear Contrato</a>
                     
-                    <a href="/show" class="btn btn-outline-info">Ver listado de empleados</a>
+                    <a href="/showContracts" class="btn btn-outline-info">Ver listado de Contratos</a>
                 </div>
             </div>
         </div>
@@ -17,12 +17,10 @@
 
 </template>
 
-
-
 <script>
-    export default {
-    mounted() {
-        console.log("Component mounted.");
-    },
-}
+    export default{
+        mounted(){
+            console.log('Componente montado');
+        },
+    }
 </script>

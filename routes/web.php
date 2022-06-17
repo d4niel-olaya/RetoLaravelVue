@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerEmployees;
+use App\Http\Controllers\ControllerContract;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,18 +13,17 @@ use App\Http\Controllers\ControllerEmployees;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Inicio
+Route::view('/', 'welcome');
+// Sección empleados
+Route::view('/employees', 'indexEmployees');
+// Crear empleados vista
+Route::view('/createEmployees', 'createEmployee');
+Route::view('/contracts', 'indexContract');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(ControllerEmployees::class)->group(function(){
+    Route::get('/show', 'index');
+    Route::post('/createEmployee',  'insertar')->name('Create');
 });
 
-Route::get('/show', [ControllerEmployees::class, 'index']);
-Route::get('/employees', function(){
-    return view('indexEmployees');
-});
-
-Route::post('/createEmployee', [ControllerEmployees::class, 'insertar'])->name('Create');
-
-Route::get('/createEmployees', function(){
-    return view('createEmployee');
-});
+Route::get('/showContracts', [ControllerContract::class, 'showContracts']);
