@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id="showEmployees">
-        <emp-component :props="{{json_encode($listado)}}"></emp-component>
+        @foreach($listado as $employee)
+            <emp-component :props="{{json_encode($employee)}}"></emp-component>
+        @endforeach
     </div>
 
     <a href="/">Volver</a>

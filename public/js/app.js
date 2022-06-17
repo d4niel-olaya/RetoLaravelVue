@@ -5420,6 +5420,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['props'],
   mounted: function mounted() {
@@ -5428,9 +5429,11 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       accept: false,
+      idContract: this.props.id,
       modify: false,
       cancelbtn: false,
-      type: this.props.tipo
+      type: this.props.tipo,
+      indicatorDelete: false
     };
   },
   methods: {
@@ -5445,6 +5448,10 @@ __webpack_require__.r(__webpack_exports__);
       this.type = this.props.tipo;
       this.modify = false;
       this.accept = false;
+    },
+    deleteContract: function deleteContract() {
+      this.indicatorDelete = true;
+      this.type = 'deleteMe';
     }
   }
 });
@@ -28759,6 +28766,35 @@ var render = function () {
             _c("input", {
               directives: [
                 {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.idContract,
+                  expression: "idContract",
+                },
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: false,
+                  expression: "false",
+                },
+              ],
+              attrs: { type: "text", name: "idContrato" },
+              domProps: { value: _vm.idContract },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.idContract = $event.target.value
+                },
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "list-group-item" }, [
+            _c("input", {
+              directives: [
+                {
                   name: "show",
                   rawName: "v-show",
                   value: _vm.modify,
@@ -28771,7 +28807,7 @@ var render = function () {
                   expression: "type",
                 },
               ],
-              attrs: { type: "text" },
+              attrs: { type: "text", name: "newValue" },
               domProps: { value: _vm.type },
               on: {
                 input: function ($event) {
@@ -28789,7 +28825,16 @@ var render = function () {
             domProps: { textContent: _vm._s(_vm.type) },
           }),
           _vm._v(" "),
-          _vm._m(0),
+          _c("li", { staticClass: "list-group-item" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-danger",
+                on: { click: _vm.deleteContract },
+              },
+              [_vm._v("Eliminar")]
+            ),
+          ]),
           _vm._v(" "),
           _c("li", { staticClass: "list-group-item" }, [
             _c(
@@ -28820,7 +28865,7 @@ var render = function () {
           _vm._v(" "),
           _c("li", { staticClass: "list-group-item" }, [
             _c(
-              "a",
+              "button",
               {
                 directives: [
                   {
@@ -28840,16 +28885,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "list-group-item" }, [
-      _c("a", { staticClass: "btn btn-danger" }, [_vm._v("Eliminar")]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -28873,37 +28909,32 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      { staticClass: "card w-75" },
-      _vm._l(this.props, function (item) {
-        return _c(
-          "ul",
-          {
-            staticClass:
-              "list-group list-group-flush list-group-horizontal border border-primary",
-          },
-          [
-            _c("li", { staticClass: "list-group-item" }, [
-              _vm._v(_vm._s(item.nombre)),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _vm._v(_vm._s(item.apellido)),
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _vm._v(_vm._s(item.cedula)),
-            ]),
-            _vm._v(" "),
-            _vm._m(0, true),
-            _vm._v(" "),
-            _vm._m(1, true),
-          ]
-        )
-      }),
-      0
-    ),
+    _c("div", { staticClass: "card w-75" }, [
+      _c(
+        "ul",
+        {
+          staticClass:
+            "list-group list-group-flush list-group-horizontal border border-primary",
+        },
+        [
+          _c("li", { staticClass: "list-group-item" }, [
+            _vm._v(_vm._s(this.props.nombre)),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "list-group-item" }, [
+            _vm._v(_vm._s(this.props.apellido)),
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "list-group-item" }, [
+            _vm._v(_vm._s(this.props.cedula)),
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+        ]
+      ),
+    ]),
   ])
 }
 var staticRenderFns = [

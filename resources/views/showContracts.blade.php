@@ -11,7 +11,10 @@
 <body>
     <div id="ContractList">
         @foreach($contracts as $contract)
-            <contract-item :props="{{json_encode($contract)}}"></contract-item>
+            <form action="{{route('update')}}" method="POST">
+            @csrf
+                <contract-item :props="{{json_encode($contract)}}"></contract-item>
+            </form>
         @endforeach
     </div>
     <script src="{{mix('js/app.js')}}"></script>
