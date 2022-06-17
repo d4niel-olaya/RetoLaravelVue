@@ -10,4 +10,7 @@ class ControllerContract extends Controller
         $contracts = Contract::get();
         return view('showContracts',['contracts' => $contracts]);
     }
+    public function update(){
+        return 'hola';
+    }
 }

@@ -25,6 +25,7 @@ Vue.component('emp-component', require('./components/EmpComponent.vue').default)
 Vue.component('create-employee', require('./components/indexEmployees.vue').default);
 Vue.component('contract-op', require('./components/indexContract.vue').default);
 Vue.component('contract-list', require('./components/ContractComponent.vue').default);
+Vue.component('contract-item',require('./components/Contract_item.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

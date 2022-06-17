@@ -27,3 +27,4 @@ Route::controller(ControllerEmployees::class)->group(function(){
 });
 
 Route::get('/showContracts', [ControllerContract::class, 'showContracts']);
+Route::get('/update{id}',[ControllerContract::class, 'update']);

@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id="ContractList">
-        <contract-list  :props="{{json_encode($contracts)}}"></contract-list>
+        @foreach($contracts as $contract)
+            <contract-item :props="{{json_encode($contract)}}"></contract-item>
+        @endforeach
     </div>
     <script src="{{mix('js/app.js')}}"></script>
 </body>
